@@ -1,0 +1,23 @@
+{
+    "3b8e8c02-ae08-4a94-b16e-9c611637f199": {
+        "email": "testmail@zeaky.dev",
+        "username": "Zend Nguyen",
+        "password": "03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4",
+        "token": null,
+        "token_expiry": null
+    },
+    "f8655c0a-1355-42b5-99c9-f60728a375f2": {
+        "email": "tlamngu@gmail.com",
+        "username": "Lam Thanh",
+        "password": "ee602d6fc3599006a60ed8c584c0eebd602eb46c44a04f93400835840cb29393",
+        "token": "2d75eeb7-9031-46bd-a905-78392c275da4",
+        "token_expiry": 1740482416.9584525
+    },
+    "5b8753cb-835f-4342-ab5a-8f9995106275": {
+        "email": "anhpn@zeaky.dev",
+        "username": "Thanh Lam",
+        "password": "a2c9cada7189297deaf370941a22af8f5bc1e40c607d4c80c6256fc6a2dff13f",
+        "token": "78cded25-b625-4b78-8088-5c47f427006d",
+        "token_expiry": 1740482351.2389426
+    }
+}

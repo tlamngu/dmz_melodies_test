@@ -1,0 +1,19 @@
+/* Infographics.css */
+.InfographicGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* You can adjust the columns as needed */
+    /* Adjust gap between grid items */
+    padding: 20px;
+}
+
+.InfographicChild {
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.InfographicChild *{
+    margin: 0;
+    color: white;
+    
+}

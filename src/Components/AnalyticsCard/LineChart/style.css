@@ -1,0 +1,12 @@
+.ChartCard{
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+    background-color: #202020;
+    padding: 1rem;
+    color: white;
+}
+.ChartCard *{
+    margin: 0;
+    padding: 0;
+}

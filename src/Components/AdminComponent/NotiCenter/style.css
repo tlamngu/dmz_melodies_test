@@ -1,0 +1,58 @@
+/* NotiCenter.css */
+
+.NotiCenter {
+    width: 100%;
+    max-height: 100%;
+    overflow: hidden;
+    overflow-y: scroll;
+    height: 100%;
+}
+
+.NotiButton{
+    position: absolute;
+    height: 50%;
+    right: 1rem;
+    aspect-ratio: 1/1;
+    bottom: 50%;
+    transform: translateY(50%);
+    background: none;
+    outline: none;
+    border: none;
+    font-size: larger;
+}
+
+.NotiCenter::-webkit-scrollbar {
+    width: 12px;
+}
+
+.NotiCenter::-webkit-scrollbar-track {
+    background: transparent;
+    /* No background */
+}
+
+.NotiCenter::-webkit-scrollbar-thumb {
+    background-color: #888;
+    /* Color of the thumb */
+    border-radius: 20px;
+    /* Rounded corners */
+    border: 3px solid transparent;
+    /* Adds padding around thumb */
+    background-clip: content-box;
+    /* Makes the padding part of the thumb background */
+}
+
+.NotiCenter .Noti {
+    position: relative;
+
+    width: 100%;
+    height: max-content;
+    background-color: #181818;
+    border-radius: 0.5rem;
+    margin-bottom: 0.5rem;
+    padding: 1rem;
+}
+
+.Noti>* {
+    color: white;
+    margin: 0;
+}

@@ -1,0 +1,13 @@
+.GridBody{
+    display: grid; 
+    grid-template-columns: 0.5fr 3fr; 
+    height: 100vh; /* Optional: Make the grid container fill the entire viewport height */
+    background-color: #181818;
+}
+.GridBody .gridMenu{
+    position: relative;
+    max-height: 100vh;
+}
+.GridBody .gridContent{
+    height: 100vh;
+}

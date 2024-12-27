@@ -1,0 +1,101 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Poppins Font Styles */
+.poppins {
+  font-family: 'Poppins', sans-serif;
+}
+
+.poppins-small {
+  font-size: 0.8rem; /* Example small size */
+}
+
+.poppins-regular {
+  font-size: 1rem; /* Example regular size */
+}
+
+.poppins-large {
+  font-size: 1.2rem; /* Example large size */
+}
+
+.poppins-larger {
+  font-size: 1.5rem; /* Example larger size */
+}
+
+.poppins-x-large { /* Example extra large */
+  font-size: 2rem;
+}
+
+.poppins-bold {
+  font-weight: bold;
+}
+
+.poppins-italic {
+  font-style: italic;
+}
+
+.poppins-light {
+  font-weight: 300;  /* Example light weight*/
+}
+
+.poppins-medium {
+    font-weight: 500; /* Example medium weight */
+}
+
+
+
+/* Montserrat Font Styles */
+.montserrat {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.montserrat-small {
+  font-size: 0.8rem; /* Example small size */
+}
+
+.montserrat-regular {
+  font-size: 1rem; /* Example regular size */
+}
+
+.montserrat-large {
+  font-size: 1.2rem; /* Example large size */
+}
+
+
+.montserrat-larger {
+  font-size: 1.5rem; /* Example larger size */
+}
+
+.montserrat-x-large { /* Example extra large */
+  font-size: 2rem;
+}
+
+
+
+.montserrat-bold {
+  font-weight: bold;
+}
+
+.montserrat-italic {
+  font-style: italic;
+}
+
+
+.montserrat-light {
+    font-weight: 300; /* Example light weight*/
+}
+
+.montserrat-medium {
+    font-weight: 500;  /* Example medium weight */
+}
+
+
+
+/* Example usage:  */
+.example-text {
+  @apply poppins-large poppins-bold; /* Combines large size and bold weight for Poppins */
+}
+
+.another-example {
+  @apply montserrat-italic montserrat-small; /* Combines italic style and small size for Montserrat */
+}
