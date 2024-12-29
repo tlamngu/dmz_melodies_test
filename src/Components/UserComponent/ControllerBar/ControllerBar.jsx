@@ -2,43 +2,104 @@ import React, { useState, useEffect } from 'react';
 import { FaPlay, FaPause, FaForward, FaBackward, FaVolumeUp, FaVolumeMute, FaSync, FaList } from 'react-icons/fa';
 import './style.css';
 
-const ControllerBar = () => {
+const ControllerBar = ({ HandleDurationChange = (dura) => {}, HandleMusicPlayPause = (s) => {}, HandleMusicNext = () => {}, HandleMusicBack = () => {}, HandleVolChange = (vol) => {}, HandleLoop = (isLoop) => {}, musicImg, musicTitle, MusicArtist, MusicDuration=0}) => {
     const [isPlaying, setIsPlaying] = useState(false);
     const [volume, setVolume] = useState(50);
     const [isLooping, setIsLooping] = useState(false);
     const [currentTime, setCurrentTime] = useState(0);
-    const [duration, setDuration] = useState(300); // Placeholder duration (e.g., 5 minutes)
-    
+    const [duration, setDuration] = useState(MusicDuration); // Placeholder duration -- 5min
+
     useEffect(() => {
-        if(localStorage.getItem("_current_vol")){
-            console.log("loaded volume memorizing")
-            setVolume(Number(localStorage.getItem("_current_vol")))
-        }else{
-            console.log("initialized volume memorizing")
+        if (localStorage.getItem("_current_vol")) {
+            console.log("loaded volume memorizing");
+            setVolume(Number(localStorage.getItem("_current_vol")));
+        } else {
+            console.log("initialized volume memorizing");
             localStorage.setItem("_current_vol", volume);
         }
     }, []);
 
+    useEffect(() => {
+        const handleKeyDown = (e) => {
+            if (e.ctrlKey) {
+                switch (e.key) {
+                    case 'ArrowRight':
+                        handleNext();
+                        break;
+                    case 'ArrowLeft':
+                        handleBack();
+                        break;
+                    default:
+                        break;
+                }
+            } else {
+                switch (e.key) {
+                    case ' ':
+                        togglePlayPause();
+                        break;
+                    case 'ArrowRight':
+                        changeDuration(10);
+                        break;
+                    case 'ArrowLeft':
+                        changeDuration(-10);
+                        break;
+                    case 'ArrowUp':
+                        adjustVolume(10);
+                        break;
+                    case 'ArrowDown':
+                        adjustVolume(-10);
+                        break;
+                    default:
+                        break;
+                }
+            }
+        };
+
+        window.addEventListener('keydown', handleKeyDown);
+
+        return () => {
+            window.removeEventListener('keydown', handleKeyDown);
+        };
+    }, [isPlaying, volume, currentTime]);
+
+    const adjustVolume = (change) => {
+        const newVolume = Math.min(100, Math.max(0, volume + change));
+        setVolume(newVolume);
+        localStorage.setItem("_current_vol", newVolume);
+        HandleVolChange(newVolume);
+    };
+
+    const changeDuration = (change) => {
+        const newTime = Math.min(duration, Math.max(0, currentTime + change));
+        setCurrentTime(newTime);
+        HandleDurationChange(newTime);
+    };
+
     const togglePlayPause = () => {
         setIsPlaying(!isPlaying);
+        HandleMusicPlayPause(!isPlaying);
     };
 
     const toggleLoop = () => {
         setIsLooping(!isLooping);
+        HandleLoop(!isLooping);
     };
 
     const handleVolumeChange = (e) => {
-        console.log("Volume changed")
-        setVolume(e.target.value);
+        console.log("Volume changed");
+        setVolume(Number(e.target.value));
         localStorage.setItem("_current_vol", e.target.value);
+        HandleVolChange(Number(e.target.value));
     };
 
     const handleNext = () => {
         console.log('Next track');
+        HandleMusicNext();
     };
 
     const handleBack = () => {
         console.log('Previous track');
+        HandleMusicBack();
     };
 
     const handleQueue = () => {
@@ -51,13 +112,18 @@ const ControllerBar = () => {
         return `${minutes}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`;
     };
 
+    const HandleDura = (e) => {
+        setCurrentTime(e.target.value);
+        HandleDurationChange(Number(e.target.value));
+    };
+
     return (
         <div className="controller-bar">
             <div className="song-info">
-                <img src="src\assets\Logo.png" alt="" className="song-banner" />
+                <img src={musicImg ? musicImg:"src/assets/Logo.png"} alt="" className="song-banner" />
                 <div className="song-details">
-                    <div className="song-title poppins">DMZ Anthem</div>
-                    <div className="song-artist poppins">Art dezuz, Malutz vorem</div>
+                    <div className="song-title poppins">{musicTitle ? musicTitle : "Track not selected"}</div>
+                    <div className="song-artist poppins">{MusicArtist ? MusicArtist : "DMZ Melodies"}</div>
                 </div>
             </div>
             <div className="controls">
@@ -72,7 +138,6 @@ const ControllerBar = () => {
                         <FaForward />
                     </button>
                 </div>
-                
                 <div className="progress-container">
                     <span className="current-time">{formatTime(currentTime)}</span>
                     <input
@@ -80,7 +145,7 @@ const ControllerBar = () => {
                         min="0"
                         max={duration}
                         value={currentTime}
-                        onChange={(e) => setCurrentTime(e.target.value)}
+                        onChange={HandleDura}
                     />
                     <span className="duration">{formatTime(duration - currentTime)}</span>
                 </div>

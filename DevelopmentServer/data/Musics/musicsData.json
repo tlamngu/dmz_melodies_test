@@ -1,0 +1,48 @@
+{
+    "MusicsData": [
+        {
+            "MusicID": "#96aff",
+            "MusicTitle": "Nhớ Một Người - The SHEEP",
+            "MusicFile": "#96aff.mp3",
+            "MusicImg": "./data/Musics/Img/#96aff.png",
+            "Authors": [
+                "a32aee34-fe1e-4aa2-8719-2686d28561ce\t"
+            ],
+            "AlbumID": [],
+            "StreamCount": 0
+        },
+        {
+            "MusicID": "#371cd",
+            "MusicTitle": "Là Vì Ai - The SHEEP",
+            "MusicFile": "#371cd.mp3",
+            "MusicImg": "./data/Musics/Img/#371cd.png",
+            "Authors": [
+                "a32aee34-fe1e-4aa2-8719-2686d28561ce"
+            ],
+            "AlbumID": [],
+            "StreamCount": 0
+        },
+        {
+            "MusicID": "#33c65",
+            "MusicTitle": "Triệu Điều Nhỏ Xíu Xiêu Lòng - ft.Kim Long",
+            "MusicFile": "#33c65.mp3",
+            "MusicImg": "./data/Musics/Img/#33c65.png",
+            "Authors": [
+                "a75b1c44-0a6d-4c6d-9507-fa865593c016"
+            ],
+            "AlbumID": [],
+            "StreamCount": 0
+        },
+        {
+            "MusicID": "#b9c1c",
+            "MusicTitle": "Blue Tequila - Táo",
+            "MusicFile": "#b9c1c.mp3",
+            "MusicImg": "./data/Musics/Img/#b9c1c.png",
+            "Authors": [
+                "fa1a42be-7bc4-4f70-aec0-d5f9a27c0a93"
+            ],
+            "AlbumID": [],
+            "StreamCount": 0
+        }
+    ]
+}

@@ -37,7 +37,7 @@ class SecuredService:
             print(f"Unexpected error hashing password: {e}")
             return None
 
-    def create_account(self, email, username, password):
+    def create_account(self, email, username, role, password):
         try:
             for uid, account in self.accounts.items():
                 if account['email'] == email:
@@ -51,6 +51,7 @@ class SecuredService:
             self.accounts[uid] = {
                 'email': email,
                 'username': username,
+                "role":[role],
                 'password': hashed_password,
                 'token': None,
                 'token_expiry': None

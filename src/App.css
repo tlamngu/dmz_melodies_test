@@ -15,3 +15,25 @@ body {
 #root{
   width: 100%;
 }
+
+::-webkit-scrollbar {
+  width: 0.5rem;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: #252525;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #747474;
+  transition: 0.1s;
+  max-height: 200px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #bbbbbb;
+  cursor: pointer;
+  transition: 0.1s;
+}

@@ -56,7 +56,7 @@ body{
     color: white;
     border-radius: 0.25rem;
 }
-button{
+.registerButton{
     width: 100%;
     height: 2rem;
     margin-top: 1rem;
@@ -66,9 +66,19 @@ button{
     outline: none;
     border: 1px solid white;
 }
-button:hover{
+.registerButton:hover{
     cursor: pointer;
     background-color: #181818;
     color: white;
     border: 1px solid black;
+}
+.TextInput select{
+    width: 100%;
+    outline: none;
+    border: none;
+    background-color: #565656;
+    height: 2rem;
+    padding: 0.5rem;
+    color: white;
+    border-radius: 0.25rem;
 }

@@ -1,0 +1,81 @@
+.musicPlayer{
+    width: 100%;
+    padding: 1rem;
+    background-color: #181818;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+.show{
+    display: block;
+}
+.hide{
+    display: none;
+}
+.musicPlayer *{
+    margin: 0;
+}
+.musicPlayer img{
+    object-fit: cover;
+    aspect-ratio: 1/1;
+    width: 100%;
+    border-radius: 1rem;
+}
+.musicPlayer h2{
+    /* font-size: 1.2rem; */
+    margin-top: 0.5rem;
+}
+.musicPlayer p{
+    margin-top: 0.25rem;
+}
+.musicPlayer .ArtistInfo{
+    margin-top: 2.5rem;
+    width: 100%;
+}
+.ArtistInfo{
+    display: grid;
+    grid-template-columns: 0.45fr 1fr;
+    gap: 0.5rem;
+    background-color: #1E1E1E;
+    padding: 1.5rem;
+    border-radius: 1rem;
+
+}
+
+.ArtistInfo .AvatarBox img{
+    border-radius: 100rem;
+    opacity: 0.8;
+}
+.AvatarBox p{
+    font-size: 0.7rem;
+    color: #656565;
+}
+.ArtistInfo .InfoBox{
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+}
+.InfoBox .Buttons{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+}
+.Buttons button{
+    width: 100%;
+    background-color: #181818;
+    color: white;
+    padding: 0.25rem;
+    border: 0;
+    border-radius: 0.25rem;
+}
+.Buttons button:hover{
+    cursor: pointer;
+}
+.QueueBox{
+    border-radius: 1rem;
+    margin-top: 1rem;
+    padding: 1.5rem;
+    background-color: #1E1E1E;
+}
+.QueueBox h4{
+    margin-bottom: 1rem;
+}

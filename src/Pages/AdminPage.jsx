@@ -8,10 +8,11 @@ import UserManagement from '/src/Components/AdminComponent/UserManagement/UserMa
 import ArtistsManagement from '/src/Components/AdminComponent/ArtistsManagement/ArtisitsManagement';
 import ContentsManagement from '/src/Components/AdminComponent/ContentsManagement/ContentsManagement';
 import ReportManagement from '/src/Components/AdminComponent/ReportsManagement/ReportManagement';
+import { useNavigate } from 'react-router-dom';
 
 function AdminPage() {
   const [selectedPage, setPage] = useState("Home");
-
+  const navi = useNavigate()
   const renderContent = () => {
     switch (selectedPage) {
       case "Home":
@@ -39,7 +40,7 @@ function AdminPage() {
             <MenuButton ButtonText="Artists management" OnClick={() => setPage("ArtistsManagement")} />
             <MenuButton ButtonText="Contents management" OnClick={() => setPage("ContentsManagement")} />
             <MenuButton ButtonText="Reports" OnClick={() => setPage("Reports")} />
-            <MenuButton ButtonText="Logout" OnClick={() => setPage("Logout")} style={{ alignSelf: "flex-end" }} />
+            <MenuButton ButtonText="Logout" OnClick={() => navi("/logout")} style={{ alignSelf: "flex-end" }} />
           </MenuBar>
         }
 
